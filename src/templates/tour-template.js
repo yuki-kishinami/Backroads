@@ -5,7 +5,6 @@ import StyledHero from "../components/StyledHero"
 import styles from "../css/template.module.css"
 import Img from "gatsby-image"
 import {FaMoneyBillWave,FaMap} from "react-icons/fa";
-import Day from "../components/SingleTour/Day"
 const Template = ({data}) => {
 
 const {name,
