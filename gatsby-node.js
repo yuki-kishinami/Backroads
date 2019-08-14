@@ -12,6 +12,13 @@ exports.createPages = async({graphql,actions}) => {
             }
           }
         }
+        posts: allContentfulPostExample {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
       }
     `)
     data.tours.edges.forEach(({node}) => {
@@ -23,4 +30,34 @@ exports.createPages = async({graphql,actions}) => {
             },
         })
     })
+    data.posts.edges.forEach(({node})=>{
+      createPage({
+        path:`blog/${node.slug}`,
+        component:path.resolve("./src/templates/blog-template.js"),
+        context:{
+          slug:node.slug,
+        },
+      })
+    })
+  // amount of posts
+  const posts = data.posts.edges
+  // post per page
+  const postPerPage = 5
+  // how many pages
+  const numPages = Math.ceil(post.length / postPerPage);
+
+  const pages = Array.from({ length:numPages }).forEach((_,i)=>{
+    createPage({
+      path:i === 0? `/blogs`:`/blogs/${i+1}`,
+      component:path.resolve(`./src/templates/blog-list-template.js`),
+      context:{
+        limit:postPerPage,
+        skip:i * postPerPage,
+        numPages,
+        currentPage:i+1,
+      }
+    })
+  })
+
+
 }
