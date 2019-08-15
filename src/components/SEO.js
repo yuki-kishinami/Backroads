@@ -26,11 +26,11 @@ const SEO = ({title,description}) => {
             <meta name="description" content={description | siteDesc} />
             <meta name="image" content={image} />
             {/* Twitter card */}
-            <meta name="Twitter:card" content="summary_large_image" />
-            <meta name="Twitter:creater" content={twitterUsername} />
-            <meta name="Twitter:title" content={siteTitle} />
-            <meta name="Twitter:description" content={description} />
-            <meta name="Twitter:image" content={`${siteUrl}${image}`} />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:creater" content={twitterUsername} />
+            <meta name="twitter:title" content={siteTitle} />
+            <meta name="twitter:description" content={siteDesc} />
+            <meta name="twitter:image" content={`${siteUrl}${image}`} />
         </Helmet>
     )
 }
