@@ -2,15 +2,15 @@ import React from 'react'
 import { graphql } from "gatsby" 
 import Layout from "../components/Layout"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import styles from "../css/blog-card.module.css"
+import styles from "../css/blog.module.css"
 import BlogCard from "../components/Blog/BlogCard"
 import Title from "../components/Title"
 import SEO from "../components/SEO"
 
-const Blog = (props) => {
+const Blog = props => {
     const {currentPage,numPages} = props.pageContext
 
-    const isFirst = currentPage === 1;
+    const isFirst = currentPage === 1
     const isLast = currentPage === numPages
 
     const prevPage = currentPage - 1 === 1?`/blogs/`:`/blogs${currentPage - 1}`
