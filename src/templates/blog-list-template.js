@@ -1,5 +1,5 @@
 import React from 'react'
-import {graphql} from "gatsby" 
+import { graphql } from "gatsby" 
 import Layout from "../components/Layout"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import styles from "../css/blog.module.css"
@@ -19,31 +19,31 @@ const Blog = (props) => {
     return (
         <Layout>
             <section className={styles.blog}>
-                <Title title="latest" subtitle="props" />
+                <Title title="latest" subtitle="posts" />
                 <div className={styles.center}>
                     {data.posts.edges.map(({node})=>{
                         return (
                             <BlogCard key={node.id} blog={node} />
                         )
                     })}
-                </div>
-                <section className={styles.link}>
+                </div>                         
+                <section className={styles.links}>
                     {
-                        !isFirst&&(<AniLink fade to={prevPage} className={styles.link}>
+                        !isFirst && (<AniLink fade to={prevPage} className={styles.link}>
                             Prev
                         </AniLink>)
                     }
                     
                     {Array.from({length:numPages},(_,i)=>{
                         return (
-                            <AnuLink 
+                            <AniLink 
                             key={i}
                             fade 
                             to={`/blogs/${i === 0 ? "" : i + 1}`} 
                             className={i+1===currentPage?`${styles.link}${styles.active}`:`${styles.link}`}
                             >
                                 {i + 1}
-                            </AnuLink>
+                            </AniLink>
                         )
                     })}
                     {

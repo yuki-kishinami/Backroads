@@ -7,8 +7,11 @@ import StyledHero from "../components/StyledHero"
 import { graphql } from "gatsby"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import FeaturedTours from "../components/Home/FeaturedTours"
+import SEO from "../components/SEO"
+
 export default ({ data }) => (
   <Layout>
+    <SEO title="Home" />
     <StyledHero home="true" img={data.defaultBcg.childImageSharp.fluid}>
       <Banner
         title="continue exploring"

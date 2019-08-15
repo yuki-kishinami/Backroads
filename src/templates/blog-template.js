@@ -1,6 +1,6 @@
 import React from 'react'
 import {graphql} from "gatsby"
-import Layout from "../Components/Layout"
+import Layout from "../components/Layout"
 import styles from "../css/single-blog.module.css"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
