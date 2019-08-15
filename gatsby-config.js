@@ -12,6 +12,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -26,6 +27,14 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+      {
+        resolve: 'gatsby-plugin-robots-txt',
+        options: {
+          host: 'https://backroads-gatsby-project.netlify.com/',
+          sitemap: 'https://backroads-gatsby-project.netlify.com/sitemap.xml',
+          policy: [{ userAgent: '*', allow: '/' }]
+        }
+      },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,

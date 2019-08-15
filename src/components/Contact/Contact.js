@@ -7,7 +7,8 @@ const Contact = () => {
       <Title title="contact" subtitle="us" />
       <div className={styles.center}>
         <form
-          action="https://formspree.io/youremail@email.com"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
           method="POST"
           className={styles.form}
         >
@@ -18,7 +19,8 @@ const Contact = () => {
               name="name"
               id="name"
               className={styles.formControl}
-              placeholder="john smith"
+              placeholder="type your name..."
+              required
             />
           </div>
           <div>
@@ -30,6 +32,7 @@ const Contact = () => {
               id="email"
               className={styles.formControl}
               placeholder="email@email.com"
+              required
             />
           </div>
           <div>
@@ -41,6 +44,7 @@ const Contact = () => {
               rows="10"
               className={styles.formControl}
               placeholder="hello there"
+              required
             />
           </div>
           <div>
