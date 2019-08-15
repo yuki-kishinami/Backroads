@@ -7,7 +7,7 @@ module.exports = {
     description:
       "Explore awesome worldwide tours & discover what makes each of them unique. Forget your daily routine & say yes to adventure",
     twitterUsername:"@yukifreeworld12",
-    image:`./default.Bcg.jpg`,
+    image:`./defaultBcg.jpeg`,
     siteUrl:`https://backroads-gatsby-project.netlify.com/`,
   },
   plugins: [
